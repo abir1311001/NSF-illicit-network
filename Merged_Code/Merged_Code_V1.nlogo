@@ -145,7 +145,7 @@ to tick-1-focal-decision
           set capacity max_capacity
         ]
         print (word "✅ " firm_ID " ↑ increased capacity by " increase-amount " → New capacity: " capacity)
-        set pre_decision_booking bookings
+        ;set pre_decision_booking bookings
       ]
 
       ;; === Decrease capacity if excess free capacity and low waiting demand ===
@@ -153,7 +153,7 @@ to tick-1-focal-decision
         let decrease-amount ceiling ((capacity - bookings) * c2)
         set capacity max (list (capacity - decrease-amount) 0)
         print (word "⚠️ " firm_ID " ↓ reduced capacity by " decrease-amount " → New capacity: " capacity)
-        set pre_decision_booking bookings
+        ;set pre_decision_booking bookings
       ]
       ;; Final snapshot
       print (word "📌 " firm_ID " cap=" capacity ", bookings=" bookings ", waiting=" customers_waiting)
